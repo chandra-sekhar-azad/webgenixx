@@ -22,6 +22,8 @@ const staggerContainer = {
   viewport: { once: true }
 };
 
+import AetherFlowBackground from "@/components/AetherFlowBackground";
+
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -55,30 +57,9 @@ export default function Home() {
 
   return (
     <div className="relative overflow-hidden selection:bg-primary selection:text-black perspective-[1000px]">
-      {/* 3D Parallax Background Orbs */}
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            x: [0, 50, 0],
-            y: [0, 30, 0],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ duration: 15, repeat: Infinity }}
-          className="absolute top-[10%] left-[10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"
-        />
-        <motion.div
-          animate={{
-            x: [0, -40, 0],
-            y: [0, 60, 0],
-            scale: [1, 1.2, 1]
-          }}
-          transition={{ duration: 20, repeat: Infinity }}
-          className="absolute bottom-[10%] right-[10%] w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[150px]"
-        />
-      </div>
-
       {/* Hero Section with 3D Interaction */}
       <section className="relative pt-48 pb-32 px-4" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} ref={containerRef}>
+        <AetherFlowBackground />
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9, z: -100 }}
