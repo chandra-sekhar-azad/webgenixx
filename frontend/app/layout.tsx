@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
@@ -64,20 +65,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
-      <body className={`${inter.variable} ${outfit.variable} font-sans bg-dark text-white antialiased selection:bg-primary selection:text-black`}>
-        <Navbar />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
-        <Toaster position="bottom-right" toastOptions={{
-          style: {
-            background: '#1a1a1a',
-            color: '#fff',
-            border: '1px solid #333',
-          }
-        }} />
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased selection:bg-primary selection:text-black`} style={{ backgroundColor: 'var(--background)', color: 'var(--foreground)' }}>
+        <ThemeProvider>
+          <Navbar />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+          <Toaster position="bottom-right" toastOptions={{
+            style: {
+              background: '#1a1a1a',
+              color: '#fff',
+              border: '1px solid #333',
+            }
+          }} />
+        </ThemeProvider>
       </body>
     </html>
   );

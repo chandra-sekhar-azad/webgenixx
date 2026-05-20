@@ -18,7 +18,7 @@ export default function About() {
           className="text-center mb-20"
         >
           <h1 className="text-3xl md:text-5xl font-bold outfit mb-6">Our <span className="gradient-text">Story</span></h1>
-          <p className="text-gray-400 max-w-2xl mx-auto text-base">
+          <p className="text-muted max-w-2xl mx-auto text-base">
             Founded in 2024, The WebGenixx started as a small team of passionate developers and designers 
             with one goal: to redefine how the web is built. Today, we're a global partner for startups 
             and enterprises alike.
@@ -32,36 +32,36 @@ export default function About() {
               initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.2 }}
-              className="glass-card text-center hover:border-secondary/40 transition-all p-6"
+              className="glass-card text-center hover:border-primary/40 transition-all p-6"
             >
               <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
                 <val.icon className="text-secondary" size={24} />
               </div>
               <h3 className="text-xl font-bold mb-3 outfit">{val.title}</h3>
-              <p className="text-gray-400 text-sm">{val.desc}</p>
+              <p className="text-muted text-sm">{val.desc}</p>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-20 glass-card p-8 md:p-12 border-primary/10 relative overflow-hidden">
+        <div className="mt-20 glass-card p-8 md:p-12 relative overflow-hidden">
            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-6 outfit">Why Choose <span className="text-primary">The WebGenixx?</span></h2>
                 <ul className="space-y-4">
                   {['Performance First Approach', 'Pixel Perfect Designs', 'Scalable Architecture', '24/7 Dedicated Support'].map(item => (
-                    <li key={item} className="flex items-center gap-3 text-gray-300">
+                    <li key={item} className="flex items-center gap-3 text-muted">
                       <div className="w-2 h-2 bg-primary rounded-full"></div> {item}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="bg-dark rounded-2xl p-8 border border-white/5">
-                <p className="italic text-gray-400 text-lg mb-6">"The WebGenixx transformed our legacy platform into a modern powerhouse. Their attention to detail is unmatched."</p>
+              <div className="bg-surface-alt rounded-2xl p-8 border border-theme">
+                <p className="italic text-muted text-lg mb-6">"The WebGenixx transformed our legacy platform into a modern powerhouse. Their attention to detail is unmatched."</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gray-800 rounded-full"></div>
+                  <div className="w-12 h-12 bg-surface-card rounded-full"></div>
                   <div>
                     <p className="font-bold">TEAM THE WEBGENIXX</p>
-                    <p className="text-sm text-gray-500">CEO at TechFlow</p>
+                    <p className="text-sm text-muted">CEO at TechFlow</p>
                   </div>
                 </div>
               </div>

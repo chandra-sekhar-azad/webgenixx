@@ -21,6 +21,6 @@ export class ContactsService {
   }
 
   async updateStatus(id: string, status: string): Promise<Contact> {
-    return this.contactModel.findByIdAndUpdate(id, { status }, { new: true }).exec();
+    return this.contactModel.findByIdAndUpdate(id, { status }, { new: true }).exec() as Promise<Contact>;
   }
 }

@@ -107,8 +107,9 @@ const AetherFlowBackground = () => {
                         let dy_mouse_a = mouse.y ? particles[a].y - mouse.y : 0;
                         let distance_mouse_a = Math.sqrt(dx_mouse_a*dx_mouse_a + dy_mouse_a*dy_mouse_a);
 
+                        const isDark = document.documentElement.classList.contains('dark') || !document.documentElement.classList.contains('light');
                         if (mouse.x && distance_mouse_a < mouse.radius) {
-                             ctx.strokeStyle = `rgba(255, 255, 255, ${opacityValue})`;
+                             ctx.strokeStyle = isDark ? `rgba(255, 255, 255, ${opacityValue})` : `rgba(0, 0, 0, ${opacityValue})`;
                         } else {
                              ctx.strokeStyle = `rgba(200, 150, 255, ${opacityValue})`;
                         }
@@ -126,8 +127,9 @@ const AetherFlowBackground = () => {
         const animate = () => {
             if (!ctx || !canvas) return;
             animationFrameId = requestAnimationFrame(animate);
-            // Set the background color inside the canvas draw loop
-            ctx.fillStyle = 'rgba(10, 10, 10, 1)';
+            // Use the current theme's background color
+            const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--background').trim() || '#0a0a0a';
+            ctx.fillStyle = bgColor;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             for (let i = 0; i < particles.length; i++) {

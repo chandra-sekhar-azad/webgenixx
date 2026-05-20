@@ -39,7 +39,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold outfit mb-4">Get in <span className="gradient-text">Touch</span></h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-muted max-w-2xl mx-auto">
             Ready to start your digital journey? Fill out the form or reach out directly.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h2 className="text-xl font-bold mb-1">Email Us</h2>
-                  <p className="text-gray-400"><a href="mailto:[EMAIL_ADDRESS]">thewebgenixx@outlook.com</a></p>
+                  <p className="text-muted"><a href="mailto:[EMAIL_ADDRESS]">thewebgenixx@outlook.com</a></p>
                 </div>
               </div>
               <div className="flex items-start gap-6">
@@ -65,7 +65,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h2 className="text-xl font-bold mb-1">Live Chat</h2>
-                  <p className="text-gray-400">Available Mon-Fri, 9am-6pm</p>
+                  <p className="text-muted">Available Mon-Fri, 9am-6pm</p>
                   <button onClick={handleWhatsApp} className="text-primary hover:underline mt-1 font-semibold flex items-center gap-1">
                     Chat on WhatsApp <ArrowRight size={14} />
                   </button>
@@ -77,17 +77,17 @@ export default function Contact() {
                 </div>
                 <div>
                   <h2 className="text-xl font-bold mb-1">Call Us</h2>
-                  <p className="text-gray-400">+91 8897536435</p>
+                  <p className="text-muted">+91 8897536435</p>
                 </div>
               </div>
             </div>
 
-            <div className="glass-card bg-primary/5 border-primary/20">
+            <div className="glass-card bg-primary/5">
                <h2 className="font-bold mb-4 flex items-center gap-2">
                  <CheckCircle2 className="text-primary" size={20} />
                  Free Consultation
                </h2>
-               <p className="text-sm text-gray-400 leading-relaxed">
+               <p className="text-sm text-muted leading-relaxed">
                  Book a 30-minute discovery call with our technical experts to discuss your project requirements and get a preliminary estimate.
                </p>
             </div>
@@ -96,7 +96,7 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="glass-card p-8 md:p-10 border-white/5 shadow-2xl relative"
+            className="glass-card p-8 md:p-10 shadow-2xl relative"
           >
             {submitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-20">
@@ -104,54 +104,54 @@ export default function Contact() {
                   <CheckCircle2 className="text-green-500" size={40} />
                 </div>
                 <h2 className="text-3xl font-bold mb-4">Message Received!</h2>
-                <p className="text-gray-400 mb-8">Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+                <p className="text-muted mb-8">Thank you for reaching out. Our team will get back to you within 24 hours.</p>
                 <button onClick={() => setSubmitted(false)} className="btn-secondary">Send another message</button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                    <label className="block text-sm font-medium text-muted mb-2">Name</label>
                     <input
                       type="text"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      className="w-full bg-dark border border-white/10 rounded-lg py-3 px-4 text-white focus:border-primary outline-none transition-all"
+                      className="w-full bg-surface-alt border border-theme rounded-lg py-3 px-4 text-page focus:border-primary outline-none transition-all"
                       placeholder="Full name"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                    <label className="block text-sm font-medium text-muted mb-2">Email</label>
                     <input
                       type="email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="w-full bg-dark border border-white/10 rounded-lg py-3 px-4 text-white focus:border-primary outline-none transition-all"
+                      className="w-full bg-surface-alt border border-theme rounded-lg py-3 px-4 text-page focus:border-primary outline-none transition-all"
                       placeholder="your email"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2">Subject</label>
+                  <label className="block text-sm font-medium text-muted mb-2">Subject</label>
                   <input
                     type="text"
                     required
                     value={formData.subject}
                     onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                    className="w-full bg-dark border border-white/10 rounded-lg py-3 px-4 text-white focus:border-primary outline-none transition-all"
+                    className="w-full bg-surface-alt border border-theme rounded-lg py-3 px-4 text-page focus:border-primary outline-none transition-all"
                     placeholder="Project Inquiry, Support, etc."
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                  <label className="block text-sm font-medium text-muted mb-2">Message</label>
                   <textarea
                     required
                     rows={6}
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    className="w-full bg-dark border border-white/10 rounded-lg py-3 px-4 text-white focus:border-primary outline-none transition-all resize-none"
+                    className="w-full bg-surface-alt border border-theme rounded-lg py-3 px-4 text-page focus:border-primary outline-none transition-all resize-none"
                     placeholder="Tell us about your project..."
                   ></textarea>
                 </div>

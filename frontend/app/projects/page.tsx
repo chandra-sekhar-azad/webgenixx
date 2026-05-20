@@ -37,7 +37,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold outfit mb-4">Our <span className="gradient-text">Projects</span></h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-muted max-w-2xl mx-auto">
             A showcase of our best work, from enterprise platforms to creative experiments.
           </p>
         </div>
@@ -71,12 +71,12 @@ export default function Projects() {
                   </div>
                 </div>
                 
-                <h2 className="text-xl font-bold mb-2 text-white">{project.title}</h2>
-                <p className="text-gray-400 text-sm mb-4 line-clamp-3 flex-grow">{project.description}</p>
+                <h2 className="text-xl font-bold mb-2 text-page">{project.title}</h2>
+                <p className="text-muted text-sm mb-4 line-clamp-3 flex-grow">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.techStack.map((tech) => (
-                    <span key={tech} className="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 rounded text-primary/80">
+                    <span key={tech} className="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-surface-alt border border-theme rounded text-primary/80">
                       {tech}
                     </span>
                   ))}
@@ -91,8 +91,8 @@ export default function Projects() {
         )}
         
         {!loading && projects.length === 0 && (
-          <div className="text-center py-20 bg-dark-lighter/50 rounded-3xl border border-white/5">
-             <p className="text-gray-400">No projects found yet. Admin is working on it!</p>
+          <div className="text-center py-20 bg-surface-card rounded-3xl border border-theme">
+             <p className="text-muted">No projects found yet. Admin is working on it!</p>
           </div>
         )}
       </div>

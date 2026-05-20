@@ -47,7 +47,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h1 className="text-4xl md:text-6xl font-bold outfit mb-6">Our <span className="gradient-text">Expertise</span></h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-muted max-w-2xl mx-auto">
             We don&apos;t just build sites; we engineer high-performance ecosystems 
             tailored to your business goals. From concept to deployment, we&apos;ve got you covered.
           </p>
@@ -67,7 +67,7 @@ export default function Services() {
                 <service.icon className={service.color} size={28} />
               </div>
               <h3 className="text-2xl font-bold mb-4 outfit">{service.title}</h3>
-              <p className="text-gray-400 leading-relaxed">{service.desc}</p>
+              <p className="text-muted leading-relaxed">{service.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -77,7 +77,7 @@ export default function Services() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="glass-card p-8 md:p-16 border-primary/20 text-center relative overflow-hidden"
+          className="glass-card p-8 md:p-16 text-center relative overflow-hidden"
         >
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold outfit mb-8">

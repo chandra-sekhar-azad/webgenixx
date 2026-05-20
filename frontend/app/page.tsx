@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <div className="relative overflow-hidden selection:bg-primary selection:text-black perspective-[1000px]">
       {/* Hero Section with 3D Interaction */}
-      <section className="relative pt-48 pb-32 px-4" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} ref={containerRef}>
+      <section className="relative min-h-[75vh] pt-48 pb-4 px-4" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} ref={containerRef}>
         <AetherFlowBackground />
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
@@ -76,8 +76,8 @@ export default function Home() {
               <span className="gradient-text">WEBGENIXX</span>
             </h1>
 
-            <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-16 leading-tight font-extralight tracking-tight">
-              We specialize in <span className="text-white">high-fidelity</span> web development that pushes the boundaries of <span className="text-white">depth and performance</span>.
+            <p className="text-muted text-lg md:text-xl max-w-3xl mx-auto mb-16 leading-tight font-extralight tracking-tight">
+              We specialize in <span className="text-page">high-fidelity</span> web development that pushes the boundaries of <span className="text-page">depth and performance</span>.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-32">
@@ -101,8 +101,8 @@ export default function Home() {
           >
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-            <div className="relative glass-card p-4 border-white/5 rounded-[2.5rem] shadow-2xl transition-transform duration-200 ease-out">
-              <div className="bg-dark-darker rounded-[1.8rem] overflow-hidden aspect-[16/9] relative shadow-inner">
+            <div className="relative glass-card p-4 rounded-[2.5rem] shadow-2xl transition-transform duration-200 ease-out">
+              <div className="bg-surface rounded-[1.8rem] overflow-hidden aspect-[16/9] relative shadow-inner">
                 <Image
                   src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1600"
                   alt="3D Visualization"
@@ -118,7 +118,7 @@ export default function Home() {
                   style={{ translateZ: 100 }}
                   animate={{ y: [-10, 10, -10] }}
                   transition={{ duration: 5, repeat: Infinity }}
-                  className="absolute top-12 left-12 glass-card py-4 px-8 border-primary/40 shadow-[0_0_30px_rgba(0,242,255,0.2)]"
+                  className="absolute top-12 left-12 glass-card py-4 px-8 shadow-[0_0_30px_rgba(0,242,255,0.2)]"
                 >
                   <div className="text-left">
                     <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-1">Performance Index</p>
@@ -132,7 +132,7 @@ export default function Home() {
       </section>
 
       {/* 3D Perspective Sections */}
-      <section className="py-40 px-4 relative overflow-hidden">
+      <section className="py-4 px-4 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, rotateX: 20, y: 50 }}
@@ -194,13 +194,13 @@ export default function Home() {
                   rotateY: 2,
                   scale: 1.01
                 }}
-                className="glass-card p-8 border-white/5 hover:border-primary/40 transition-all duration-300 transform-gpu"
+                className="glass-card p-8 hover:border-primary/40 transition-all duration-300 transform-gpu"
               >
                 <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feat.color} flex items-center justify-center mb-8 shadow-xl`}>
-                  <feat.icon className="text-white" size={28} />
+                  <feat.icon className="text-page" size={28} />
                 </div>
                 <h3 className="text-xl font-bold mb-4 outfit tracking-tight">{feat.title}</h3>
-                <p className="text-gray-400 text-base leading-relaxed mb-8 font-light">{feat.desc}</p>
+                <p className="text-muted text-base leading-relaxed mb-8 font-light">{feat.desc}</p>
                 <div className="flex items-center gap-2 text-primary text-[10px] font-black uppercase tracking-widest">
                   Learn More <ChevronRight size={14} />
                 </div>
@@ -211,11 +211,11 @@ export default function Home() {
       </section>
 
       {/* Massive CTA */}
-      <section className="py-48 px-4">
+      <section className="py-4 px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.9, rotateX: 5 }}
           whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
-          className="max-w-5xl mx-auto glass-card p-16 md:p-24 border-primary/20 text-center relative overflow-hidden"
+          className="max-w-5xl mx-auto glass-card p-16 md:p-24 text-center relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-dark-darker to-secondary/10 -z-10"></div>
           <div className="relative z-10">
