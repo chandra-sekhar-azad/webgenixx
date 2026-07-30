@@ -104,7 +104,7 @@ export default function Home() {
                                     }}
                                     className="group relative min-w-[320px] max-w-[420px] shrink-0 border border-white/10 hover:border-cyan-500/50 rounded-3xl p-10 transition-all duration-300 hover:shadow-[0_10px_40px_rgba(34,211,238,0.2)] overflow-hidden"
                                 >
-                                    <div className="absolute inset-0 bg-black/80 group-hover:bg-black/60 transition-colors duration-500 z-0"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0 transition-opacity duration-500"></div>
                                     <div className="relative z-10 flex flex-col h-full justify-between">
                                         <div>
                                             <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8 group-hover:bg-cyan-500/30 transition-colors group-hover:scale-110 duration-300 border border-white/10">
@@ -149,7 +149,7 @@ export default function Home() {
                                 }}
                                 className="group relative w-full h-[220px] sm:h-[320px] border border-white/10 hover:border-cyan-500/50 rounded-2xl sm:rounded-3xl p-4 sm:p-8 transition-all duration-300 hover:shadow-[0_10px_40px_rgba(34,211,238,0.2)] overflow-hidden"
                             >
-                                <div className="absolute inset-0 bg-black/80 group-hover:bg-black/60 transition-colors duration-500 z-0"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-0 transition-opacity duration-500"></div>
                                 <div className="relative z-10 flex flex-col h-full justify-between">
                                     <div>
                                         <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-6 group-hover:bg-cyan-500/30 transition-colors group-hover:scale-110 duration-300 border border-white/10">
@@ -174,13 +174,12 @@ export default function Home() {
             < section className="py-2" >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="mb-16"
+                        className="mb-8 sticky top-16 lg:top-[80px] z-[60] bg-[#0D0D12]/95 backdrop-blur-md pt-6 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 border-b border-purple-500/10 shadow-lg"
                     >
-                        <p className="text-cyan-400 font-bold tracking-wider text-4xl sm:text-5xl md:text-8xl mb-3">WHY WEBGENIXX</p>
-
+                        <p className="text-cyan-400 font-bold tracking-wider text-4xl sm:text-5xl md:text-8xl mb-0">WHY WEBGENIXX</p>
                     </motion.div>
 
                     <motion.div
@@ -203,8 +202,8 @@ export default function Home() {
                             <motion.div
                                 key={i}
                                 variants={itemVars}
-                                className="sticky top-20 md:top-32 shadow-[0_-20px_50px_rgba(0,0,0,0.6)] w-full h-auto min-h-[250px] flex flex-col md:flex-row bg-[#111116] border border-white/5 rounded-3xl overflow-hidden group hover:border-cyan-500/30 transition-colors duration-500"
-                                style={{ top: `calc(4rem + ${i * 1.5}rem)` }}
+                                className="sticky shadow-[0_-20px_50px_rgba(0,0,0,0.6)] w-full h-auto min-h-[250px] flex flex-col md:flex-row bg-[#111116] border border-white/5 rounded-3xl overflow-hidden group hover:border-cyan-500/30 transition-colors duration-500 z-[40]"
+                                style={{ top: `calc(130px + ${i * 1.1}rem)` }}
                             >
                                 {/* Left Image */}
                                 <div

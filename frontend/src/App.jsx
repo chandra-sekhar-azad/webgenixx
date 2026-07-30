@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import GetStarted from './pages/GetStarted';
 import StartProject from './pages/StartProject';
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminDashboard from './pages/admin/AdminDashboard';
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
           <Route path="get-started" element={<GetStarted />} />
           <Route path="start-project" element={<StartProject />} />
         </Route>
+
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
       </Routes>
     </BrowserRouter>
   );

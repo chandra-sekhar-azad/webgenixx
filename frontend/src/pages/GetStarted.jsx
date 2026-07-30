@@ -1,6 +1,36 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 export default function GetStarted() {
+    const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' });
+    const [status, setStatus] = useState({ type: '', msg: '' });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setStatus({ type: '', msg: '' });
+
+        try {
+            const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+            const res = await fetch(`${apiBase}/queries`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+            const json = await res.json();
+
+            if (json.success) {
+                setStatus({ type: 'success', msg: 'Message sent successfully! We will get back to you soon.' });
+                setFormData({ name: '', email: '', company: '', message: '' });
+            } else {
+                setStatus({ type: 'error', msg: json.error || 'Failed to send message.' });
+            }
+        } catch (error) {
+            setStatus({ type: 'error', msg: 'Network error. Please try again later.' });
+        }
+        setIsSubmitting(false);
+    };
     return (
         <div className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
@@ -45,11 +75,19 @@ export default function GetStarted() {
                     animate={{ opacity: 1, x: 0 }}
                     className="bg-[#0a0a0c] p-8 lg:p-12 border border-white/5 rounded-2xl relative"
                 >
-                    <form className="flex flex-col gap-8">
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+                        {status.msg && (
+                            <div className={`p-4 rounded-lg text-sm font-bold border ${status.type === 'success' ? 'bg-green-500/10 text-green-400 border-green-500/20' : 'bg-red-500/10 text-red-400 border-red-500/20'}`}>
+                                {status.msg}
+                            </div>
+                        )}
                         <div className="flex flex-col gap-2">
                             <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Your name</label>
                             <input
                                 type="text"
+                                value={formData.name}
+                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                required
                                 placeholder="…"
                                 className="bg-[#111116] border border-white/10 rounded-lg p-4 text-white focus:border-purple-500 focus:outline-none transition-colors"
                             />
@@ -58,6 +96,9 @@ export default function GetStarted() {
                             <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Email</label>
                             <input
                                 type="email"
+                                value={formData.email}
+                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                required
                                 placeholder="…"
                                 className="bg-[#111116] border border-white/10 rounded-lg p-4 text-white focus:border-purple-500 focus:outline-none transition-colors"
                             />
@@ -66,6 +107,8 @@ export default function GetStarted() {
                             <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Company</label>
                             <input
                                 type="text"
+                                value={formData.company}
+                                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                                 placeholder="…"
                                 className="bg-[#111116] border border-white/10 rounded-lg p-4 text-white focus:border-purple-500 focus:outline-none transition-colors"
                             />
@@ -74,16 +117,20 @@ export default function GetStarted() {
                             <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Project details</label>
                             <textarea
                                 rows="4"
+                                value={formData.message}
+                                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                required
                                 placeholder="Tell us about it…"
                                 className="bg-[#111116] border border-white/10 rounded-lg p-4 text-white focus:border-purple-500 focus:outline-none transition-colors resize-none"
                             ></textarea>
                         </div>
 
                         <button
-                            type="button"
-                            className="bg-white text-black font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-lg hover:bg-gray-200 transition-colors w-full mt-4"
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="bg-white text-black font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-lg hover:bg-gray-200 transition-colors w-full mt-4 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                         >
-                            Send message &rarr;
+                            {isSubmitting ? 'Sending...' : 'Send message →'}
                         </button>
                     </form>
                 </motion.div>
