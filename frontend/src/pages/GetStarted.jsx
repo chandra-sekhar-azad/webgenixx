@@ -26,7 +26,7 @@ export default function GetStarted() {
                         </div>
                         <div>
                             <h4 className="text-white font-bold mb-2">Email</h4>
-                            <p className="text-gray-400 text-sm">thewebgenixx@outlook.com</p>
+                            <p className="text-gray-400 text-sm">contact@thewebgenixx.in</p>
                         </div>
                         <div>
                             <h4 className="text-white font-bold mb-2">Phone</h4>

@@ -77,8 +77,8 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Services Section - Horizontal Scroll */}
-            <section ref={targetRef} className="bg-[#0f0f0f] relative h-[300vh] border-y border-white/5">
+            {/* Services Section - Horizontal Scroll (Desktop Only) */}
+            <section ref={targetRef} className="hidden md:block bg-[#0f0f0f] relative h-[300vh] border-y border-white/5">
                 <div className="sticky top-0 h-screen flex flex-col items-start justify-center overflow-hidden pt-20">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full shrink-0">
                         <div className="text-center mb-12 lg:mb-20">
@@ -126,8 +126,52 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* Services Section - Static Cards (Mobile) */}
+            <section className="bg-[#0f0f0f] border-b border-white/5 pt-2 pb-10 block md:hidden">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+                    <div className="text-center mb-6 mt-4">
+                        <p className="text-cyan-400 font-bold tracking-wider text-xl mb-3">WHAT WE DO</p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3 sm:gap-6">
+                        {[
+                            { icon: PenTool, title: "Logo & Graphic Design", desc: "Command attention with bespoke branding that speaks volumes before a word is read.", bg: logoDesignBg },
+                            { icon: Code, title: "Website Development", desc: "Ultra-fast, responsive platforms built with the latest frameworks for maximum impact.", bg: webDevBg },
+                            { icon: Settings, title: "Website Maintenance", desc: "Proactive updates, security patches, and 24/7 monitoring to keep you online.", bg: webMaintainBg },
+                            { icon: Smartphone, title: "Software Development", desc: "Custom web applications and native mobile apps tailored to complex workflows.", bg: softwareDevBg }
+                        ].map((s, i) => (
+                            <div
+                                key={i}
+                                style={{
+                                    backgroundImage: `url('${s.bg}')`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center'
+                                }}
+                                className="group relative w-full h-[220px] sm:h-[320px] border border-white/10 hover:border-cyan-500/50 rounded-2xl sm:rounded-3xl p-4 sm:p-8 transition-all duration-300 hover:shadow-[0_10px_40px_rgba(34,211,238,0.2)] overflow-hidden"
+                            >
+                                <div className="absolute inset-0 bg-black/80 group-hover:bg-black/60 transition-colors duration-500 z-0"></div>
+                                <div className="relative z-10 flex flex-col h-full justify-between">
+                                    <div>
+                                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-6 group-hover:bg-cyan-500/30 transition-colors group-hover:scale-110 duration-300 border border-white/10">
+                                            <s.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:text-cyan-300 transition-colors" />
+                                        </div>
+                                        <h3 className="text-[13px] sm:text-xl font-bold text-white mb-2 sm:mb-3 drop-shadow-md leading-tight">{s.title}</h3>
+                                        <p className="text-gray-300 leading-tight drop-shadow-md text-[10px] sm:text-sm line-clamp-3 sm:line-clamp-none">{s.desc}</p>
+                                    </div>
+                                    <div className="mt-2 sm:mt-6">
+                                        <Link to="/services" className="inline-flex items-center font-bold text-cyan-400 hover:text-cyan-300 drop-shadow-md z-20 text-[10px] sm:text-sm">
+                                            Explore <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2 transition-transform group-hover:translate-x-1" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section >
+
             {/* Features Section */}
-            <section className="py-2">
+            < section className="py-2" >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -190,10 +234,10 @@ export default function Home() {
                         ))}
                     </motion.div>
                 </div>
-            </section>
+            </section >
 
             {/* Process Section */}
-            <section className="py-2 relative overflow-hidden bg-[#0f0f0f]">
+            < section className="py-2 relative overflow-hidden bg-[#0f0f0f]" >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -263,24 +307,24 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Powerful E-Commerce Section */}
-            <section className="bg-black relative overflow-hidden border-t border-white/5 py-0">
+            < section className="bg-black relative overflow-hidden border-t border-white/5 py-0" >
                 {/* Header */}
-                <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-12 pt-24 pb-16 relative">
+                < div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-12 pt-24 pb-16 relative" >
                     <div className="md:absolute left-4 sm:left-6 lg:left-12 top-24 flex items-center justify-center md:justify-start gap-3 mb-6 md:mb-0">
                         <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse shadow-[0_0_10px_rgba(168,85,247,0.8)]"></span>
                         <span className="text-purple-500 font-bold tracking-widest text-sm uppercase">Limited Time Offer</span>
                     </div>
                     <h2 className="text-5xl md:text-8xl font-bold text-white tracking-tight w-full text-center">Powerful E-Commerce</h2>
-                </div>
+                </div >
 
                 {/* Split Layout Container */}
-                <div className="flex flex-col lg:flex-row w-full border-t border-white/5">
+                < div className="flex flex-col lg:flex-row w-full border-t border-white/5" >
 
                     {/* Left Side (Offer) */}
-                    <div className="w-full lg:w-1/2 bg-[#050505] p-10 lg:p-24 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 relative">
+                    < div className="w-full lg:w-1/2 bg-[#050505] p-10 lg:p-24 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-white/5 relative" >
                         <div className="max-w-md mx-auto w-full">
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 mb-10 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
                                 <span className="w-2 h-2 rounded-full bg-purple-500"></span>
@@ -305,10 +349,10 @@ export default function Home() {
                                 *Server and Domain handled separately.
                             </p>
                         </div>
-                    </div>
+                    </div >
 
                     {/* Right Side (Features) */}
-                    <div className="w-full lg:w-1/2 bg-[#0a0a0c] p-10 lg:p-24">
+                    < div className="w-full lg:w-1/2 bg-[#0a0a0c] p-10 lg:p-24" >
                         <div className="max-w-2xl mx-auto w-full">
 
                             {/* Why Choose Section */}
@@ -353,12 +397,12 @@ export default function Home() {
                                 ))}
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
+                    </div >
+                </div >
+            </section >
 
             {/* Flash Ribbon Marquee */}
-            <div className="w-full bg-purple-600 py-6 overflow-hidden flex items-center relative z-20">
+            < div className="w-full bg-purple-600 py-6 overflow-hidden flex items-center relative z-20" >
                 <motion.div
                     animate={{ x: ["0%", "-50%"] }}
                     transition={{ repeat: Infinity, ease: "linear", duration: 100 }}
@@ -379,10 +423,10 @@ export default function Home() {
                         </span>
                     ))}
                 </motion.div>
-            </div>
+            </div >
 
             {/* CTA Section */}
-            <section className="bg-gradient-to-b from-[#0f0f0f] to-[#050508] py-2 border-t border-white/5 overflow-hidden">
+            < section className="bg-gradient-to-b from-[#0f0f0f] to-[#050508] py-2 border-t border-white/5 overflow-hidden" >
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -396,10 +440,10 @@ export default function Home() {
                         whileTap={{ scale: 0.95 }}
                         className="bg-purple-600 hover:bg-purple-700 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all shadow-[0_0_30px_rgba(147,51,234,0.3)] hover:shadow-[0_0_40px_rgba(147,51,234,0.5)]"
                     >
-                        Start Your Project
+                        <a href="get-started">Start Your Project</a>
                     </motion.button>
                 </motion.div>
-            </section>
-        </div>
+            </section >
+        </div >
     );
 }

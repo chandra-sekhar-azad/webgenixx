@@ -35,9 +35,9 @@ export default function Footer() {
                 <div className="p-8 lg:p-16 flex flex-col justify-start">
                     <h4 className="text-purple-500 font-bold tracking-widest text-[10px] uppercase mb-8">Contact</h4>
                     <p className="text-white text-sm md:text-base font-medium mb-4"><a href="tel:+918897536435">+91 88975 36435</a> <br /> <a href="tel:+919963048098">+91 99630 48098</a></p>
-                    <p className="text-white text-sm md:text-base font-medium mb-4"><a href="mailto:thewebgenixx@outlook.com">thewebgenixx@outlook.com</a></p>
+                    <p className="text-white text-sm md:text-base font-medium mb-4"><a href="mailto:contact@thewebgenixx.in">contact@thewebgenixx.in</a></p>
                     <p className="text-white text-sm md:text-base font-medium mb-4"><a href="https://www.instagram.com/the.webgenixx/" target="_blank">@the.webgenixx</a></p>
-                    <p className="text-white text-sm md:text-base font-medium mb-12"><a href="https://thewebgenixx.in"target="_blank"rel="noopener noreferrer">thewebgenixx.in</a></p>
+                    <p className="text-white text-sm md:text-base font-medium mb-12"><a href="https://thewebgenixx.in" target="_blank" rel="noopener noreferrer">thewebgenixx.in</a></p>
                     <Link to="/get-started" className="inline-flex py-4 px-8 border border-white/10 hover:border-purple-500 text-white text-[10px] font-bold tracking-widest uppercase items-center gap-4 transition-colors w-fit">
                         Get Started <ChevronRight className="w-4 h-4 text-purple-500" />
                     </Link>
