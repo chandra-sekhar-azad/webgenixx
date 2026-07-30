@@ -78,7 +78,7 @@ export default function Home() {
             </section>
 
             {/* Services Section - Horizontal Scroll (Desktop Only) */}
-            <section ref={targetRef} className="hidden md:block bg-[#0f0f0f] relative h-[300vh] border-y border-white/5">
+            <section ref={targetRef} className="hidden lg:block bg-[#0f0f0f] relative h-[300vh] border-y border-white/5">
                 <div className="sticky top-0 h-screen flex flex-col items-start justify-center overflow-hidden pt-20">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full shrink-0">
                         <div className="text-center mb-12 lg:mb-20">
@@ -126,8 +126,8 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Services Section - Static Cards (Mobile) */}
-            <section className="bg-[#0f0f0f] border-b border-white/5 pt-2 pb-10 block md:hidden">
+            {/* Services Section - Static Cards (Mobile & Tablet) */}
+            <section className="bg-[#0f0f0f] border-b border-white/5 pt-0 pb-12 block lg:hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
                     <div className="text-center mb-6 mt-4">
                         <p className="text-cyan-400 font-bold tracking-wider text-xl mb-3">WHAT WE DO</p>
@@ -263,7 +263,7 @@ export default function Home() {
                                 viewport={{ once: true }}
                                 className="w-32 h-32 rounded-full bg-[#111116] border border-white/5 shadow-[0_0_50px_rgba(168,85,247,0.2)] flex items-center justify-center relative md:mx-auto ml-0"
                             >
-                                <span className="text-transparent bg-clip-text from-purple-400 to-cyan-400 font-bold text-3xl font-display"><img src="/public/brand.png" alt="logo" /></span>
+                                <span className="text-transparent bg-clip-text from-purple-400 to-cyan-400 font-bold text-3xl font-display"><img src="/brand.png" alt="logo" /></span>
                             </motion.div>
                         </div>
 
