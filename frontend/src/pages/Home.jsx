@@ -82,7 +82,7 @@ export default function Home() {
                 <div className="sticky top-0 h-screen flex flex-col items-start justify-center overflow-hidden pt-20">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full shrink-0">
                         <div className="text-center mb-12 lg:mb-20">
-                            <p className="text-cyan-400 font-bold tracking-wider md:text-8xl text-xl mb-3">WHAT WE DO</p>
+                            <p className="text-cyan-400 font-bold tracking-wider text-4xl sm:text-5xl md:text-8xl mb-3">WHAT WE DO</p>
 
                         </div>
                     </div>
@@ -130,7 +130,7 @@ export default function Home() {
             <section className="bg-[#0f0f0f] border-b border-white/5 pt-0 pb-12 block lg:hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
                     <div className="text-center mb-6 mt-4">
-                        <p className="text-cyan-400 font-bold tracking-wider text-xl mb-3">WHAT WE DO</p>
+                        <p className="text-cyan-400 font-bold tracking-wider text-4xl sm:text-5xl lg:text-8xl mb-3">WHAT WE DO</p>
                     </div>
 
                     <div className="grid grid-cols-2 gap-3 sm:gap-6">
@@ -179,7 +179,7 @@ export default function Home() {
                         viewport={{ once: true }}
                         className="mb-16"
                     >
-                        <p className="text-cyan-400 font-bold tracking-wider md:text-8xl text-xl mb-3">WHY WEBGENIXX</p>
+                        <p className="text-cyan-400 font-bold tracking-wider text-4xl sm:text-5xl md:text-8xl mb-3">WHY WEBGENIXX</p>
 
                     </motion.div>
 
