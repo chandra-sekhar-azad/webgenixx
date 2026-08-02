@@ -19,6 +19,7 @@ import newFastExpBg from '../assets/new_fast_exp.png';
 import newAdminBg from '../assets/new_admin.png';
 import newIndianBizBg from '../assets/new_indian_biz.png';
 import newLocalSuppBg from '../assets/new_local_supp.png';
+import heroBg from '../assets/hero.jpg';
 
 export default function Home() {
     const containerVars = {
@@ -62,18 +63,25 @@ export default function Home() {
                         </motion.div>
 
                         <motion.h1 variants={itemVars} className="text-[90px] font-bold tracking-tight mb-6 leading-none">
-                            <span className="inline-block text-white font-display tracking-tighter font-bold leading-[0.85] text-[clamp(3.5rem,11vw,13rem)]">
+                            <span className="inline-block text-white font-display tracking-tighter font-bold leading-[0.85] text-[110px]">
                                 The
                             </span>
                             <br />
-                            <span className="inline-block font-display tracking-tighter font-bold leading-[0.85] pb-[0.4em] text-[clamp(3.5rem,11vw,13rem)] text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Webgenixx </span>
+                            <span className="inline-block font-display tracking-tighter font-bold leading-[0.85] pb-[0.4em] text-[120px] text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Webgenixx </span>
                         </motion.h1>
 
 
 
                     </motion.div>
 
-
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="relative w-full lg:w-auto mt-10 lg:mt-0"
+                    >
+                        <img src={heroBg} alt="Webgenixx Hero" className="w-full h-auto object-contain rounded-3xl" />
+                    </motion.div>
                 </div>
             </section>
 

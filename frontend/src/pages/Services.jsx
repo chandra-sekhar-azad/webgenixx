@@ -2,6 +2,13 @@ import { CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Services() {
+    const handleAction = (service, pkg, price) => {
+        const text = price
+            ? `Hi Webgenixx, I am interested in the ${pkg} for ${service} (Price: ${price}). Let's discuss!`
+            : `Hi Webgenixx, I am interested in ${pkg} for ${service}. I would like to get a quotation!`;
+        window.open(`https://wa.me/918897536435?text=${encodeURIComponent(text)}`, "_blank");
+    };
+
     return (
         <div className="py-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
             <motion.div
@@ -19,7 +26,7 @@ export default function Services() {
                     viewport={{ once: true }}
                     className="text-3xl font-bold mb-10 border-b border-white/10 pb-4"
                 >
-                    Logo & Graphic Design
+                    1. Logo & Graphic Design
                 </motion.h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-white/5 bg-[#050505]">
 
@@ -41,7 +48,7 @@ export default function Services() {
 
                         <p className="text-gray-500 text-[10px] italic mb-8 mt-4 invisible">Placeholder</p>
 
-                        <button className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
+                        <button onClick={() => handleAction('Logo & Graphic Design', 'Basic Package', '₹2,000')} className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
                             Select Package &rarr;
                         </button>
                     </motion.div>
@@ -67,7 +74,7 @@ export default function Services() {
 
                         <p className="text-gray-500 text-[10px] italic mb-8 mt-4 invisible">Placeholder</p>
 
-                        <button className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
+                        <button onClick={() => handleAction('Logo & Graphic Design', 'Standard Package', '₹3,250')} className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
                             Select Package &rarr;
                         </button>
                     </motion.div>
@@ -94,7 +101,7 @@ export default function Services() {
 
                         <p className="text-gray-500 text-[10px] italic mb-8 mt-4">Source File: ₹750</p>
 
-                        <button className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
+                        <button onClick={() => handleAction('Logo & Graphic Design', 'Premium Package', '₹5,750')} className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
                             Select Package &rarr;
                         </button>
                     </motion.div>
@@ -108,7 +115,7 @@ export default function Services() {
                     viewport={{ once: true }}
                     className="text-3xl font-bold mb-10 border-b border-white/10 pb-4"
                 >
-                    Website Development
+                    2. Website Development
                 </motion.h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-0 border border-white/5 bg-[#050505]">
 
@@ -130,7 +137,7 @@ export default function Services() {
 
                         <p className="text-gray-500 text-[10px] italic mb-8 mt-4">Additional Page: ₹1,000</p>
 
-                        <button className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
+                        <button onClick={() => handleAction('Website Development', 'Service-Based Website', '₹5,000')} className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
                             Select Package &rarr;
                         </button>
                     </motion.div>
@@ -156,7 +163,7 @@ export default function Services() {
 
                         <p className="text-gray-500 text-[10px] italic mb-8 mt-4">Additional 50 Products: ₹1,000</p>
 
-                        <button className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
+                        <button onClick={() => handleAction('Website Development', 'Product-Based Website', '₹7,000')} className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
                             Select Package &rarr;
                         </button>
                     </motion.div>
@@ -183,7 +190,7 @@ export default function Services() {
 
                         <p className="text-gray-500 text-[10px] italic mb-8 mt-4 invisible">Placeholder</p>
 
-                        <button className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
+                        <button onClick={() => handleAction('Website Development', 'Semi E-Commerce', '₹15,000')} className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
                             Select Package &rarr;
                         </button>
                     </motion.div>
@@ -209,7 +216,7 @@ export default function Services() {
 
                         <p className="text-gray-500 text-[9px] italic mb-8 mt-4 leading-tight">Add-ons: Invoice Printing, Custom UI/UX, Delivery Integration, OTP Login, WhatsApp Alerts</p>
 
-                        <button className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
+                        <button onClick={() => handleAction('Website Development', 'Full E-Commerce', '₹25,000')} className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
                             Select Package &rarr;
                         </button>
                     </motion.div>
@@ -226,9 +233,13 @@ export default function Services() {
                             <span className="text-gray-300 font-light text-2xl">+</span>
                         </div>
                         <h3 className="text-lg font-bold text-white mb-4">Custom Build</h3>
-                        <p className="text-gray-400 text-xs leading-relaxed">
+                        <p className="text-gray-400 text-xs leading-relaxed mb-6">
                             Frontend or Backend architecture tailored exactly to your needs.
                         </p>
+
+                        <button onClick={() => handleAction('Website Development', 'Custom Build', null)} className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
+                            Get Custom Quote &rarr;
+                        </button>
                     </motion.div>
 
                 </div>
@@ -262,7 +273,7 @@ export default function Services() {
                             <li className="text-gray-400 text-xs flex gap-2 items-start"><span className="text-gray-500 shrink-0">✓</span> <div>Security Checks</div></li>
                         </ul>
 
-                        <button className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
+                        <button onClick={() => handleAction('Website Maintenance', 'Care Basic', '₹1,500/month')} className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
                             Select Package &rarr;
                         </button>
                     </motion.div>
@@ -286,7 +297,7 @@ export default function Services() {
                             <li className="text-gray-400 text-xs flex gap-2 items-start"><span className="text-gray-500 shrink-0">✓</span> <div>Priority Support</div></li>
                         </ul>
 
-                        <button className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
+                        <button onClick={() => handleAction('Website Maintenance', 'Care Pro', '₹3,500/month')} className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
                             Select Package &rarr;
                         </button>
                     </motion.div>
@@ -310,7 +321,7 @@ export default function Services() {
                             <li className="text-gray-400 text-xs flex gap-2 items-start"><span className="text-gray-500 shrink-0">✓</span> <div>Monthly Reports</div></li>
                         </ul>
 
-                        <button className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
+                        <button onClick={() => handleAction('Website Maintenance', 'Care E-Commerce', '₹6,500/month')} className="w-full py-3 mt-auto border border-purple-500/20 text-purple-400 font-semibold text-xs hover:bg-purple-600 hover:text-white transition-colors">
                             Select Package &rarr;
                         </button>
                     </motion.div>
@@ -352,7 +363,7 @@ export default function Services() {
                                 <li className="text-gray-400 text-sm flex gap-3 items-center"><span className="text-gray-500">✓</span> Ongoing Maintenance</li>
                             </ul>
 
-                            <button className="w-fit py-3 px-8 text-purple-400 font-semibold text-xs border border-purple-500/20 hover:bg-purple-600 hover:text-white transition-colors">
+                            <button onClick={() => handleAction('Software Development', 'Custom Software Solutions', null)} className="w-fit py-3 px-8 text-purple-400 font-semibold text-xs border border-purple-500/20 hover:bg-purple-600 hover:text-white transition-colors">
                                 Get Quotation &rarr;
                             </button>
                         </div>

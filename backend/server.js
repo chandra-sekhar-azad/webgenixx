@@ -35,18 +35,56 @@ const querySchema = new mongoose.Schema({
 
 const Query = mongoose.model('Query', querySchema);
 
-// API Route: Admin Login
-app.post('/api/admin/login', (req, res) => {
-    const { email, password } = req.body;
-    const adminEmail = process.env.ADMIN_EMAIL || 'admin@thewebgenixx.in';
-    const adminPassword = process.env.ADMIN_PASSWORD || 'webgenixx@admin';
+const adminSchema = new mongoose.Schema({
+    email: { type: String, required: true },
+    password: { type: String, required: true }
+});
+const Admin = mongoose.model('Admin', adminSchema);
 
-    if (email === adminEmail && password === adminPassword) {
-        // In a real app, generate and return a JWT token here
-        res.status(200).json({ success: true, message: 'Login successful', token: 'fake-jwt-token-123' });
-    } else {
-        res.status(401).json({ success: false, message: 'Invalid email or password' });
+// API Route: Admin Login
+app.post('/api/admin/login', async (req, res) => {
+    const { email, password } = req.body;
+    let admin = await Admin.findOne({ email });
+
+    if (!admin) {
+        const envEmail = process.env.ADMIN_EMAIL || 'admin@thewebgenixx.in';
+        const envPassword = process.env.ADMIN_PASSWORD || 'webgenixx@admin';
+        if (email === envEmail && password === envPassword) {
+            admin = new Admin({ email, password });
+            await admin.save();
+            return res.status(200).json({ success: true, message: 'Login successful', token: 'fake-jwt-token-123' });
+        } else {
+            return res.status(401).json({ success: false, message: 'Invalid email or password' });
+        }
+    } else if (admin.password !== password) {
+        return res.status(401).json({ success: false, message: 'Invalid email or password' });
     }
+
+    res.status(200).json({ success: true, message: 'Login successful', token: 'fake-jwt-token-123' });
+});
+
+// API Route: Change Admin Password
+app.post('/api/admin/change-password', async (req, res) => {
+    const { email, oldPassword, newPassword } = req.body;
+    let admin = await Admin.findOne({ email });
+
+    if (!admin) {
+        const envEmail = process.env.ADMIN_EMAIL || 'admin@thewebgenixx.in';
+        const envPassword = process.env.ADMIN_PASSWORD || 'webgenixx@admin';
+        if (email === envEmail && oldPassword === envPassword) {
+            admin = new Admin({ email, password: newPassword });
+            await admin.save();
+            return res.status(200).json({ success: true, message: 'Password updated successfully' });
+        } else {
+            return res.status(401).json({ success: false, message: 'Invalid old password' });
+        }
+    } else if (admin.password !== oldPassword) {
+        return res.status(401).json({ success: false, message: 'Invalid old password' });
+    }
+
+    admin.password = newPassword;
+    await admin.save();
+    res.status(200).json({ success: true, message: 'Password updated successfully' });
 });
 
 // API Route: Submit a new query (Used by Get Started form)
@@ -76,6 +114,16 @@ app.patch('/api/queries/:id', async (req, res) => {
         const { status } = req.body;
         const query = await Query.findByIdAndUpdate(req.params.id, { status }, { new: true });
         res.status(200).json({ success: true, data: query });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// API Route: Delete a query
+app.delete('/api/queries/:id', async (req, res) => {
+    try {
+        await Query.findByIdAndDelete(req.params.id);
+        res.status(200).json({ success: true, message: 'Query deleted successfully' });
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });
     }
