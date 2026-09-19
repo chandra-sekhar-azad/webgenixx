@@ -17,11 +17,9 @@ import paytmBg from '../assets/paytm-img.jpg';
 import newWhatsappBg from '../assets/new_whatsapp.png';
 import newFastExpBg from '../assets/new_fast_exp.png';
 import newAdminBg from '../assets/new_admin.png';
+import heroBg from '../assets/hero.jpg';
 import newIndianBizBg from '../assets/new_indian_biz.png';
 import newLocalSuppBg from '../assets/new_local_supp.png';
-import heroBg from '../assets/hero.jpg';
-import tabletHeroBg from '../assets/tablet-hero.png';
-import mobileHeroBg from '../assets/mobile-hero.png';
 
 export default function Home() {
     const containerVars = {
@@ -49,11 +47,9 @@ export default function Home() {
         <div className="flex flex-col">
             {/* Hero Section */}
             <section className="relative w-full overflow-hidden min-h-[80vh] flex items-center">
-                {/* Responsive Background Images */}
+                {/* Background Image */}
                 <div className="absolute inset-0 w-full h-full -z-10">
-                    <img src={heroBg} alt="" className="hidden lg:block w-full h-full object-cover object-center" />
-                    <img src={tabletHeroBg} alt="" className="hidden md:block lg:hidden w-full h-full object-cover object-center" />
-                    <img src={mobileHeroBg} alt="" className="block md:hidden w-full h-full object-cover object-center" />
+                    <img src={heroBg} alt="" className="w-full h-full object-cover object-center" />
                     <div className="absolute inset-0 bg-black/20"></div> {/* Optional slight overlay for readability */}
                 </div>
 
