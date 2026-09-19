@@ -133,7 +133,7 @@ app.delete('/api/queries/:id', async (req, res) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Fallback for single-page applications (SPA routing)
-app.get('*', (req, res) => {
+app.use((req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
