@@ -58,7 +58,7 @@ export default function Home() {
                         className="max-w-2xl flex flex-col items-start"
                     >
                         {/* IDEAS WEBSITES REAL IMPACT */}
-                        <motion.div variants={itemVars} className="flex items-center gap-3 text-[11px] md:text-sm font-bold tracking-[0.2em] text-gray-400 mb-6 uppercase">
+                        <motion.div variants={itemVars} className="flex items-center gap-3 text-[11px] md:text-sm font-bold tracking-[0.2em] text-gray-400 mb-6 mt-12 lg:mt-16 uppercase">
                             <span>IDEAS</span>
                             <ArrowRight className="w-4 h-4 text-gray-500" />
                             <span>WEBSITES</span>
@@ -66,7 +66,7 @@ export default function Home() {
                             <span>REAL IMPACT</span>
                         </motion.div>
 
-                        <motion.h1 variants={itemVars} className="text-5xl md:text-[70px] lg:text-[80px] font-bold tracking-tight mb-6 leading-[1.1] text-white">
+                        <motion.h1 variants={itemVars} className="text-5xl md:text-[50px] lg:text-[50px] font-bold tracking-tight mb-6 leading-[1.1] text-white">
                             Build Your Digital <br />
                             Future with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600">Webgenixx</span>
                         </motion.h1>

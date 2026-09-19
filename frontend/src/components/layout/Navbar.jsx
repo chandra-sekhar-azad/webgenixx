@@ -22,7 +22,7 @@ export default function Navbar() {
                             <img src="/brand.png" alt="logo" />
                         </div>
                         <Link to="/" className="text-xl font-bold tracking-tight text-white hover:opacity-80 transition-opacity">
-                            The Webgenixx
+                            Webgenixx
                         </Link>
                     </div>
 
