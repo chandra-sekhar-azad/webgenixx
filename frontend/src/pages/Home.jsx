@@ -73,10 +73,47 @@ export default function Home() {
                         </motion.h1>
 
                         {/* Button */}
-                        <motion.div variants={itemVars}>
+                        <motion.div variants={itemVars} className="mb-12">
                             <Link to="/get-started" className="group flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-full transition-all shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_30px_rgba(147,51,234,0.5)] text-lg">
                                 Let's Build Together <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </Link>
+                        </motion.div>
+
+                        {/* Service Icons Grid */}
+                        <motion.div variants={itemVars} className="flex flex-wrap md:flex-nowrap gap-6 md:gap-8 w-full items-start max-w-3xl">
+                            {/* Item 1 */}
+                            <div className="flex flex-col gap-3 flex-1 relative">
+                                <svg width="0" height="0">
+                                    <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop stopColor="#3b82f6" offset="0%" />
+                                        <stop stopColor="#9333ea" offset="100%" />
+                                    </linearGradient>
+                                </svg>
+                                <Code className="w-8 h-8" style={{ stroke: "url(#icon-gradient)" }} />
+                                <span className="text-gray-300 text-sm md:text-sm font-medium leading-tight">Website & App<br/>Development</span>
+                                {/* Divider */}
+                                <div className="hidden md:block absolute right-0 top-1 w-px h-[80%] bg-white/10 -mr-4"></div>
+                            </div>
+                            
+                            {/* Item 2 */}
+                            <div className="flex flex-col gap-3 flex-1 relative">
+                                <PenTool className="w-8 h-8" style={{ stroke: "url(#icon-gradient)" }} />
+                                <span className="text-gray-300 text-sm md:text-sm font-medium leading-tight">Logo & Graphic<br/>Design</span>
+                                <div className="hidden md:block absolute right-0 top-1 w-px h-[80%] bg-white/10 -mr-4"></div>
+                            </div>
+
+                            {/* Item 3 */}
+                            <div className="flex flex-col gap-3 flex-1 relative">
+                                <Settings className="w-8 h-8" style={{ stroke: "url(#icon-gradient)" }} />
+                                <span className="text-gray-300 text-sm md:text-sm font-medium leading-tight">Maintenance &<br/>Support</span>
+                                <div className="hidden md:block absolute right-0 top-1 w-px h-[80%] bg-white/10 -mr-4"></div>
+                            </div>
+
+                            {/* Item 4 */}
+                            <div className="flex flex-col gap-3 flex-1 relative">
+                                <MessageCircle className="w-8 h-8" style={{ stroke: "url(#icon-gradient)" }} />
+                                <span className="text-gray-300 text-sm md:text-sm font-medium leading-tight">WhatsApp<br/>Ordering & Integrations</span>
+                            </div>
                         </motion.div>
                     </motion.div>
                 </div>
