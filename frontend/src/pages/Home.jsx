@@ -47,8 +47,12 @@ export default function Home() {
         <div className="flex flex-col">
             {/* Hero Section */}
             <section className="relative w-full bg-[#0f0f0f] min-h-[60vh] md:min-h-[80vh] flex items-center overflow-hidden">
-                <img src={heroBg} alt="Webgenixx Hero" className="absolute inset-0 w-full h-full object-cover object-center z-0" />
-                <div className="absolute inset-0 bg-black/50 z-0"></div> {/* Overlay for text readability */}
+                <img src={heroBg} alt="Webgenixx Hero" className="hidden lg:block absolute inset-0 w-full h-full object-cover object-center z-0" />
+                <div className="hidden lg:block absolute inset-0 bg-black/60 z-0"></div> {/* Overlay for text readability */}
+                
+                {/* Background Blobs for Mobile/Tablet */}
+                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none z-0 lg:hidden"></div>
+                <div className="absolute top-40 left-0 -ml-20 w-[300px] h-[300px] bg-cyan-600/20 rounded-full blur-[100px] pointer-events-none z-0 lg:hidden"></div>
 
                 <div className="px-4 py-20 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative z-10">
                     <motion.div
