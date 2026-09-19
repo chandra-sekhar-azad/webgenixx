@@ -1,4 +1,4 @@
-import { ArrowRight, Code, PenTool, Settings, Smartphone, CheckCircle2, ShieldCheck, LifeBuoy, Zap } from 'lucide-react';
+import { ArrowRight, Code, PenTool, Settings, Smartphone, CheckCircle2, ShieldCheck, LifeBuoy, Zap, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
@@ -55,23 +55,58 @@ export default function Home() {
                         variants={containerVars}
                         initial="hidden"
                         animate="show"
-                        className="max-w-2xl"
+                        className="max-w-2xl flex flex-col items-start"
                     >
-                        <motion.div variants={itemVars} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8">
-                            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                            <span className="text-sm font-medium text-gray-300">We Build · You Grow </span>
+                        {/* IDEAS WEBSITES REAL IMPACT */}
+                        <motion.div variants={itemVars} className="flex items-center gap-3 text-[11px] md:text-sm font-bold tracking-[0.2em] text-gray-400 mb-6 uppercase">
+                            <span>IDEAS</span>
+                            <ArrowRight className="w-4 h-4 text-gray-500" />
+                            <span>WEBSITES</span>
+                            <ArrowRight className="w-4 h-4 text-gray-500" />
+                            <span>REAL IMPACT</span>
                         </motion.div>
 
-                        <motion.h1 variants={itemVars} className="text-[90px] font-bold tracking-tight mb-6 leading-none">
-                            <span className="inline-block text-white font-display tracking-tighter font-bold leading-[0.85] text-[110px]">
-                                The
-                            </span>
-                            <br />
-                            <span className="inline-block font-display tracking-tighter font-bold leading-[0.85] pb-[0.4em] text-[120px] text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Webgenixx </span>
+                        <motion.h1 variants={itemVars} className="text-5xl md:text-[70px] lg:text-[80px] font-bold tracking-tight mb-6 leading-[1.1] text-white">
+                            Build Your Digital <br />
+                            Future with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600">Webgenixx</span>
                         </motion.h1>
 
+                        <motion.p variants={itemVars} className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 max-w-lg">
+                            We design, develop and scale digital solutions that help your business grow. From stunning websites to powerful web apps — we turn your ideas into reality.
+                        </motion.p>
 
+                        <motion.div variants={itemVars} className="mb-16">
+                            <Link to="/get-started" className="group flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-full transition-all shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_30px_rgba(147,51,234,0.5)] text-lg">
+                                Let's Build Together <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        </motion.div>
 
+                        <motion.div variants={itemVars} className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full mt-4">
+                            <div className="flex flex-col gap-3">
+                                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400">
+                                    <Code className="w-5 h-5" />
+                                </div>
+                                <span className="text-gray-400 text-xs md:text-sm font-medium leading-tight">Website & App<br/>Development</span>
+                            </div>
+                            <div className="flex flex-col gap-3">
+                                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400">
+                                    <PenTool className="w-5 h-5" />
+                                </div>
+                                <span className="text-gray-400 text-xs md:text-sm font-medium leading-tight">Logo & Graphic<br/>Design</span>
+                            </div>
+                            <div className="flex flex-col gap-3">
+                                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400">
+                                    <Settings className="w-5 h-5" />
+                                </div>
+                                <span className="text-gray-400 text-xs md:text-sm font-medium leading-tight">Maintenance &<br/>Support</span>
+                            </div>
+                            <div className="flex flex-col gap-3">
+                                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400">
+                                    <MessageCircle className="w-5 h-5" />
+                                </div>
+                                <span className="text-gray-400 text-xs md:text-sm font-medium leading-tight">WhatsApp<br/>Ordering & Integrations</span>
+                            </div>
+                        </motion.div>
                     </motion.div>
 
                     <motion.div
