@@ -75,7 +75,7 @@ export default function Home() {
                             We design, develop and scale digital solutions that help your business grow. From stunning websites to powerful web apps — we turn your ideas into reality.
                         </motion.p>
 
-                        <motion.div variants={itemVars} className="mb-16">
+                        <motion.div variants={itemVars} className="mb-8">
                             <Link to="/get-started" className="group flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-full transition-all shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_30px_rgba(147,51,234,0.5)] text-lg">
                                 Let's Build Together <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </Link>
