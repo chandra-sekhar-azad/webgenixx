@@ -48,11 +48,19 @@ export default function Home() {
     return (
         <div className="flex flex-col">
             {/* Hero Section */}
-            <section className="relative px-4 py-2 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full overflow-hidden">
+            <section className="relative w-full overflow-hidden min-h-[80vh] flex items-center">
+                {/* Responsive Background Images */}
+                <div className="absolute inset-0 w-full h-full -z-10">
+                    <img src={heroBg} alt="" className="hidden lg:block w-full h-full object-cover object-center" />
+                    <img src={tabletHeroBg} alt="" className="hidden md:block lg:hidden w-full h-full object-cover object-center" />
+                    <img src={mobileHeroBg} alt="" className="block md:hidden w-full h-full object-cover object-center" />
+                    <div className="absolute inset-0 bg-black/20"></div> {/* Optional slight overlay for readability */}
+                </div>
+
                 <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] pointer-events-none"></div>
                 <div className="absolute top-40 left-0 -ml-20 w-[300px] h-[300px] bg-cyan-600/20 rounded-full blur-[100px] pointer-events-none"></div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+                <div className="px-4 py-20 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <motion.div
                         variants={containerVars}
                         initial="hidden"
@@ -111,16 +119,6 @@ export default function Home() {
                         </motion.div>
                     </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative w-full lg:w-auto mt-10 lg:mt-0"
-                    >
-                        <img src={heroBg} alt="Webgenixx Hero Desktop" className="hidden lg:block w-full h-auto object-contain rounded-3xl" />
-                        <img src={tabletHeroBg} alt="Webgenixx Hero Tablet" className="hidden md:block lg:hidden w-full h-auto object-contain rounded-3xl" />
-                        <img src={mobileHeroBg} alt="Webgenixx Hero Mobile" className="block md:hidden w-full h-auto object-contain rounded-3xl" />
-                    </motion.div>
                 </div>
             </section>
 
