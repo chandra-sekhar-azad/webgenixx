@@ -129,6 +129,14 @@ app.delete('/api/queries/:id', async (req, res) => {
     }
 });
 
+// Serve static frontend files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Fallback for single-page applications (SPA routing)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`🚀 Backend Server running on http://localhost:${PORT}`);
 });
