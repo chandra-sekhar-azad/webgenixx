@@ -20,6 +20,8 @@ import newAdminBg from '../assets/new_admin.png';
 import newIndianBizBg from '../assets/new_indian_biz.png';
 import newLocalSuppBg from '../assets/new_local_supp.png';
 import heroBg from '../assets/hero.jpg';
+import tabletHeroBg from '../assets/tablet-hero.png';
+import mobileHeroBg from '../assets/mobile-hero.png';
 
 export default function Home() {
     const containerVars = {
@@ -115,7 +117,9 @@ export default function Home() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="relative w-full lg:w-auto mt-10 lg:mt-0"
                     >
-                        <img src={heroBg} alt="Webgenixx Hero" className="w-full h-auto object-contain rounded-3xl" />
+                        <img src={heroBg} alt="Webgenixx Hero Desktop" className="hidden lg:block w-full h-auto object-contain rounded-3xl" />
+                        <img src={tabletHeroBg} alt="Webgenixx Hero Tablet" className="hidden md:block lg:hidden w-full h-auto object-contain rounded-3xl" />
+                        <img src={mobileHeroBg} alt="Webgenixx Hero Mobile" className="block md:hidden w-full h-auto object-contain rounded-3xl" />
                     </motion.div>
                 </div>
             </section>
