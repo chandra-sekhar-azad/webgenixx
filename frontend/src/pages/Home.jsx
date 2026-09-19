@@ -46,8 +46,40 @@ export default function Home() {
     return (
         <div className="flex flex-col">
             {/* Hero Section */}
-            <section className="relative w-full bg-[#0f0f0f]">
-                <img src={heroBg} alt="Webgenixx Hero" className="w-full h-auto object-contain" />
+            <section className="relative w-full bg-[#0f0f0f] min-h-[60vh] md:min-h-[80vh] flex items-center overflow-hidden">
+                <img src={heroBg} alt="Webgenixx Hero" className="absolute inset-0 w-full h-full object-cover object-center z-0" />
+                <div className="absolute inset-0 bg-black/50 z-0"></div> {/* Overlay for text readability */}
+
+                <div className="px-4 py-20 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative z-10">
+                    <motion.div
+                        variants={containerVars}
+                        initial="hidden"
+                        animate="show"
+                        className="max-w-2xl flex flex-col items-start"
+                    >
+                        {/* Tagline */}
+                        <motion.div variants={itemVars} className="flex items-center gap-3 text-[11px] md:text-sm font-bold tracking-[0.2em] text-gray-300 mb-6 uppercase">
+                            <span>IDEAS</span>
+                            <ArrowRight className="w-4 h-4 text-purple-500" />
+                            <span>WEBSITES</span>
+                            <ArrowRight className="w-4 h-4 text-purple-500" />
+                            <span>REAL IMPACT</span>
+                        </motion.div>
+
+                        {/* Large Text */}
+                        <motion.h1 variants={itemVars} className="text-5xl md:text-[60px] lg:text-[70px] font-bold tracking-tight mb-8 leading-[1.1] text-white">
+                            Build Your Digital <br />
+                            Future with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600">Webgenixx</span>
+                        </motion.h1>
+
+                        {/* Button */}
+                        <motion.div variants={itemVars}>
+                            <Link to="/get-started" className="group flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-full transition-all shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_30px_rgba(147,51,234,0.5)] text-lg">
+                                Let's Build Together <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        </motion.div>
+                    </motion.div>
+                </div>
             </section>
 
             {/* Services Section - Horizontal Scroll (Desktop Only) */}
