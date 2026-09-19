@@ -58,7 +58,7 @@ export default function Home() {
                         className="max-w-2xl flex flex-col items-start"
                     >
                         {/* IDEAS WEBSITES REAL IMPACT */}
-                        <motion.div variants={itemVars} className="flex items-center gap-3 text-[11px] md:text-sm font-bold tracking-[0.2em] text-gray-400 mb-6 mt-12 lg:mt-16 uppercase">
+                        <motion.div variants={itemVars} className="flex items-center gap-3 text-[11px] md:text-sm font-bold tracking-[0.2em] text-gray-400 mb-6 mt-8 lg:mt-10 uppercase">
                             <span>IDEAS</span>
                             <ArrowRight className="w-4 h-4 text-gray-500" />
                             <span>WEBSITES</span>
